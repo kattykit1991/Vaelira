@@ -41,7 +41,7 @@ No JavaScript or frameworks are currently used.
 
 ## Image Notice
 
-The character images, Favicon and Cursor Images used in this project are AI-generated images.
+The character images, favicon, and cursor images used in this project are AI-generated.
 
 They are used solely as visual material for this educational and non-commercial practice project.
 
