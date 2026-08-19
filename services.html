@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vaelira Nightthorn | Services</title>
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="forbidden-archive">
+      <span class="cursed-link">Forbidden Archive</span>
+    </div>
+
+    <header>
+      <h1>🧙‍♀️ Vaelira Nightthorn 🧙‍♀️</h1>
+      <p>Senior Arcane Engineer</p>
+    </header>
+
+    <main>
+      <div class="arcane-frame">
+        <span class="rune-ring" aria-hidden="true"></span>
+        <img
+          src="images/Vaelira_portrait.png"
+          alt="Portrait of Vaelira Nightthorn, a dark-haired arcane engineer wearing glasses and purple jewelry."
+          width="25%"
+        />
+      </div>
+
+      <section>
+        <h2>Request Arcane Services</h2>
+        <p>
+          From unstable enchantments to cursed infrastructure, Vaelira offers
+          discreet and highly specialized arcane services for problems best left
+          to professionals.
+        </p>
+        <p>
+          Choose the service that fits your situation and send a raven with the
+          details.
+        </p>
+      </section>
+
+      <section>
+        <h2>Send a Raven</h2>
+
+        <form>
+          <fieldset>
+            <legend>Service Request</legend>
+
+            <label for="name">Name:</label>
+            <input required type="text" id="name" name="name" />
+
+            <label for="email">Raven-Mail:</label>
+            <input required type="email" id="email" name="email" />
+
+            <label for="phone">Telephone:</label>
+            <input required type="tel" id="phone" name="phone" />
+
+            <label for="address">Incident Location:</label>
+            <input
+              required
+              type="text"
+              id="address"
+              name="address"
+              autocomplete="street-address"
+            />
+
+            <label for="service">Services:</label>
+            <select required id="service" name="service">
+              <option value="" disabled selected>Choose a service</option>
+              <option value="Arcane Infrastructure">
+                Arcane Infrastructure
+              </option>
+              <option value="Dungeon Security">Dungeon Security</option>
+              <option value="Curse Removal">Curse Removal</option>
+              <option value="Magical Systems Consulting">
+                Magical Systems Consulting
+              </option>
+              <option value="Emergency Demon Containment">
+                Emergency Demon Containment
+              </option>
+            </select>
+
+            <label for="message">Describe your problem:</label>
+            <textarea required id="message" name="message"></textarea>
+
+            <button type="submit">Send Raven</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      Loss of applications may happen due to demonic raids on our ravens. <br />
+      Built with HTML, CSS and questionable workplace safety standards. <br />
+      © 2026 Vaelira Nightthorn · Demon-related delays are non-refundable
+    </footer>
+  </body>
+</html>

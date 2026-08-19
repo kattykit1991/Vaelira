@@ -1,0 +1,511 @@
+/* =========================
+   1. COLORS / VARIABLES
+   ========================= */
+
+:root {
+  --arcane-dark: #21152b; /* dunkles Lila, fast schwarz */
+  --arcane-gold: #d8c6a3; /* warmer Vaelira-Goldton */
+  --arcane-purple: #5c3d70; /* violetter Akzentton */
+  --arcane-light: #f4edf8; /* helle Schrift, aber nicht knallweiß */
+  --arcane-section: #2b1b38; /* etwas helleres Lila für Sections */
+}
+
+/* =========================
+   2. GLOBAL STYLES
+   ========================= */
+
+body {
+  background-color: var(--arcane-dark); /* dunkellila Hintergrund */
+  color: var(--arcane-light); /* helle Schrift, nicht knallweiß */
+
+  cursor:
+    url("images/cursor-purple-48.png") 0 0,
+    auto; /* lila Kristall als Mauszeiger */
+}
+
+a {
+  color: var(--arcane-gold); /* Links in gold/beige */
+
+  cursor:
+    url("images/cursor-purple-48.png") 0 0,
+    pointer; /* lila Kristall auch auf Links */
+}
+
+/* =========================
+   3. NAVIGATION
+   ========================= */
+
+nav {
+  display: flex; /* Links nebeneinander */
+  justify-content: center; /* alles mittig */
+  gap: 12px; /* bisschen Platz dazwischen */
+  padding: 16px; /* bisschen Luft um die Nav */
+
+  position: sticky; /* bleibt beim Scrollen oben kleben */
+  top: 0; /* direkt am oberen Rand */
+  z-index: 1000; /* bleibt vor anderem Inhalt */
+
+  background-color: var(--arcane-dark); /* Hintergrund beim Scrollen */
+}
+
+nav a {
+  text-decoration: none; /* Unterstrich weg */
+  border: 1px solid var(--arcane-gold); /* dünner goldener Rand */
+  border-radius: 999px; /* schön pillenförmig */
+  padding: 8px 14px; /* Luft innerhalb der Buttons */
+
+  transition: 0.7s ease; /* statt BONK lieber weich */
+}
+
+nav a:hover {
+  background-color: var(--arcane-gold); /* beim Hover wirds gold */
+  color: var(--arcane-dark); /* Schrift wird dunkel */
+
+  transform: translateY(-4px); /* schwebt leicht nach oben */
+
+  box-shadow:
+    0 0 0 3px var(--arcane-purple) /* violetter Ring außenrum */,
+    0 0 18px rgba(216, 198, 163, 0.35); /* weicher goldener Glow */
+}
+
+/* =========================
+   4. HEADER
+   ========================= */
+
+header {
+  text-align: center; /* Header mittig */
+  padding: 30px; /* bisschen Luft */
+}
+
+header h1 {
+  color: var(--arcane-gold); /* Vaeliras Name in Gold */
+  font-size: 2.5rem; /* schön groß */
+  letter-spacing: 2px; /* bisschen mehr Luft zwischen Buchstaben */
+
+  text-shadow: 0 0 12px rgba(216, 198, 163, 0.35);
+  /* leichter goldener Glow */
+}
+
+header p {
+  margin-top: 0; /* weniger Abstand zum Namen */
+  font-style: italic; /* bisschen fancy */
+  letter-spacing: 1px; /* Buchstaben etwas auseinander */
+}
+
+/* =========================
+   5. IMAGES / ARCANE FRAME
+   ========================= */
+
+img {
+  border-radius: 50%; /* rechteckig wird oval, quadratisch wird rund */
+  border: 3px solid var(--arcane-gold); /* goldener Rahmen */
+  padding: 6px; /* bisschen Luft zwischen Bild und Rahmen */
+
+  box-shadow:
+    0 0 0 3px var(--arcane-purple) /* zweiter violetter Ring */,
+    0 0 18px rgba(216, 198, 163, 0.35); /* weicher goldener Glow */
+
+  background-color: var(
+    --arcane-dark
+  ); /* dunkler Bereich zwischen Bild und Rahmen */
+}
+
+.arcane-frame {
+  position: relative; /* Bezugspunkt für frei platzierte Deko */
+  width: fit-content; /* nur so breit wie der Inhalt */
+  margin: 0 auto; /* mittig setzen */
+}
+
+.arcane-frame img {
+  width: 300px; /* feste Portraitbreite */
+  max-width: 70vw; /* auf kleinen Screens nicht eskalieren */
+}
+
+.arcane-frame::before,
+.arcane-frame::after {
+  content: "✦ ◇ ✦"; /* Deko wird per CSS erzeugt */
+  position: absolute; /* frei am Rahmen platzierbar */
+
+  left: 50%; /* horizontal zur Mitte */
+
+  color: var(--arcane-gold); /* Goldton */
+
+  background-color: var(
+    --arcane-dark
+  ); /* verdeckt den Rahmen direkt hinter der Deko */
+
+  padding: 2px 12px; /* bisschen Luft innen */
+  border: 1px solid var(--arcane-gold); /* dünner goldener Deko-Rahmen */
+  border-radius: 999px; /* schön rund */
+
+  font-size: 1.3rem; /* Deko etwas größer */
+  line-height: 1; /* keine komische Extra-Höhe */
+
+  z-index: 2; /* Deko liegt vor dem Rahmen */
+}
+
+.arcane-frame::before {
+  top: 0; /* sitzt oben auf der Rahmenkante */
+
+  transform: translate(-50%, -50%);
+  /* mittig + halb nach oben ziehen */
+}
+
+.arcane-frame::after {
+  bottom: 8px; /* optische Korrektur, sonst hängt es zu tief */
+
+  transform: translate(-50%, 50%);
+  /* mittig + halb nach unten schieben */
+}
+
+/* =========================
+   6. SECTIONS
+   ========================= */
+
+section {
+  max-width: 800px; /* Text nicht von Sachsen bis Mordor ziehen */
+  margin: 30px auto; /* Abstand oben/unten + mittig */
+  padding: 25px; /* Luft zwischen Inhalt und Rand */
+
+  background-color: var(
+    --arcane-section
+  ); /* etwas anderer Lilaton als der Seitenhintergrund */
+
+  border: 1px solid var(--arcane-purple); /* feiner violetter Rand */
+  border-radius: 15px; /* weichere Ecken */
+}
+
+section h2 {
+  color: var(--arcane-gold); /* Überschriften in Gold */
+  text-align: center; /* mittig */
+  letter-spacing: 1px; /* bisschen eleganter */
+
+  border-bottom: 1px solid var(--arcane-purple); /* feine Trennlinie */
+  padding-bottom: 10px; /* Luft zwischen Text und Linie */
+}
+
+section {
+  transition: 0.4s ease; /* Hover-Effekt schön weich */
+}
+
+section:hover {
+  transform: translateY(-3px); /* schwebt leicht nach oben */
+
+  box-shadow:
+    0 0 0 1px var(--arcane-purple) /* feiner violetter Rand */,
+    0 0 20px rgba(216, 198, 163, 0.18); /* sehr dezenter Glow */
+}
+
+/* =========================
+   7. FORMS / BUTTONS
+   ========================= */
+
+form {
+  max-width: 600px; /* Formular nicht absurd breit machen */
+  margin: 0 auto; /* mittig */
+}
+
+fieldset {
+  display: grid; /* Raster fürs Formular */
+
+  grid-template-columns: 140px 1fr;
+  /* Labels links, Eingabefelder rechts */
+
+  gap: 14px 18px;
+  /* erster Wert = Zeilen, zweiter = Spalten */
+
+  border: 1px solid var(--arcane-purple); /* violetter Rahmen */
+  border-radius: 15px; /* weichere Ecken */
+  padding: 25px; /* Luft innen */
+}
+
+label {
+  align-self: center; /* Labels vertikal mittig */
+}
+
+input,
+select,
+textarea {
+  width: 100%; /* Felder füllen ihre Spalte aus */
+
+  box-sizing: border-box;
+  /* Padding und Rand zählen mit in die Gesamtbreite */
+
+  padding: 10px; /* bisschen Luft innen */
+
+  background-color: var(--arcane-dark); /* dunkler Hintergrund */
+  color: var(--arcane-light); /* helle Schrift */
+
+  border: 1px solid var(--arcane-purple); /* violetter Rand */
+  border-radius: 8px; /* leicht rund */
+  resize: none; /* verhindert, dass die Textarea vom User größer/kleiner gezogen wird */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--arcane-gold); /* goldener Fokusrahmen statt Browser-Blau */
+
+  outline-offset: 2px; /* bisschen Abstand zum Feld */
+
+  border-color: var(--arcane-gold); /* eigentlicher Rand wird auch gold */
+}
+
+button {
+  grid-column: 2; /* Button in die rechte Formularspalte */
+  padding: 10px; /* bisschen Luft */
+
+  background-color: var(--arcane-dark); /* dunkellila */
+  color: var(--arcane-gold); /* goldene Schrift */
+
+  border: 1px solid var(--arcane-gold); /* dünner goldener Rand */
+  border-radius: 999px; /* schön rund */
+
+  cursor:
+    url("images/cursor-purple-48.png") 0 0,
+    auto; /* LILA KRISTALL BUTTON ZEIGER!! */
+
+  transition: 0.7s; /* Hover weich statt BONK */
+}
+
+button:hover {
+  background-color: var(--arcane-gold); /* beim Hover gold */
+  color: var(--arcane-dark); /* Schrift dunkel */
+
+  transform: translateY(-4px); /* schwebt leicht nach oben */
+
+  box-shadow:
+    0 0 0 3px var(--arcane-purple) /* violetter Ring */,
+    0 0 18px rgba(216, 198, 163, 0.35); /* weicher goldener Glow */
+}
+
+/* =========================
+   8. FOOTER
+   ========================= */
+
+footer {
+  max-width: 800px; /* nicht unnötig breit */
+
+  margin: 50px auto 20px;
+  /* oben viel Luft, mittig, unten etwas weniger */
+
+  padding: 20px; /* Luft innen */
+
+  text-align: center; /* Text mittig */
+  color: var(--arcane-gold); /* goldene Schrift */
+
+  border-top: 1px solid var(--arcane-purple); /* feine Trennlinie nach oben */
+
+  text-shadow: 0 0 10px rgba(216, 198, 163, 0.25);
+  /* ganz dezenter Glow, Footer soll nicht schreien */
+}
+
+footer p {
+  margin: 0; /* Browser-Standardabstand weg */
+  font-size: 0.9rem; /* etwas kleiner */
+  letter-spacing: 1px; /* bisschen eleganter */
+}
+
+/* =========================
+   9. ANIMATIONS
+   ========================= */
+
+.vaelira-full {
+  box-sizing: border-box;
+  /* Rahmen und Padding zählen mit in die Bildbreite */
+
+  animation: arcane-glow 5s ease-in-out infinite;
+  /* arcane-glow = Name der Animation */
+  /* 5s = ein kompletter Durchlauf */
+  /* ease-in-out = weich stärker und wieder schwächer */
+  /* infinite = ARCANE POWAH FOREVER */
+}
+
+@keyframes arcane-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 3px var(--arcane-purple) /* violetter Ring bleibt */,
+      0 0 18px rgba(216, 198, 163, 0.35); /* sanfter Glow */
+
+    /* Anfang & Ende = ruhiges Leuchten */
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 3px var(--arcane-purple) /* violetter Ring bleibt */,
+      0 0 55px rgba(216, 198, 163, 0.8); /* großes starkes Leuchten */
+
+    /* Mitte = VOLLE ARCANE POWAH */
+  }
+}
+
+.rune-ring {
+  position: absolute; /* beeinflusst das normale Layout nicht */
+
+  inset: -40px;
+  /* Ring wird auf allen Seiten etwas größer als das Portrait */
+
+  border: 1px dashed var(--arcane-gold); /* dünner gestrichelter Magiekreis */
+
+  border-radius: 50%; /* passend zum Portrait oval */
+
+  z-index: 0; /* Ring liegt hinter dem Portrait */
+
+  pointer-events: none;
+  /* reine Deko, soll keine Mausinteraktionen blockieren */
+
+  filter: drop-shadow(0 0 8px var(--arcane-purple));
+  /* leichter violetter Glow */
+
+  animation: rune-spin 18s linear infinite;
+  /* 18s = eine komplette Runde */
+  /* linear = überall gleich schnell */
+  /* infinite = dreht sich endlos weiter */
+}
+
+.rune-ring::before,
+.rune-ring::after {
+  content: "✦ ᚱ ✧ ᛟ ✦ ᚨ ✧"; /* dekorative Runen */
+
+  position: absolute; /* frei auf dem Ring platzierbar */
+  left: 50%; /* erstmal horizontal zur Mitte */
+
+  color: var(--arcane-gold); /* Runen in Gold */
+
+  background-color: var(--arcane-dark);
+  /* verdeckt die Linie direkt hinter den Runen */
+
+  padding: 0 8px; /* bisschen Luft links und rechts */
+
+  white-space: nowrap; /* Runen bleiben in einer Zeile */
+
+  text-shadow:
+    0 0 6px var(--arcane-purple) /* violetter Schein */,
+    0 0 12px var(--arcane-gold); /* goldener Schein */
+}
+
+.rune-ring::before {
+  top: -10px; /* obere Runen etwas über den Ring */
+
+  transform: translateX(-50%);
+  /* Hälfte der eigenen Breite zurück = wirklich mittig */
+}
+
+.rune-ring::after {
+  bottom: -10px; /* untere Runen etwas unter den Ring */
+
+  transform: translateX(-50%) rotate(180deg);
+  /* mittig setzen + für unten einmal umdrehen */
+}
+
+@keyframes rune-spin {
+  from {
+    transform: rotate(0deg); /* Start */
+  }
+
+  to {
+    transform: rotate(360deg); /* einmal komplett herum */
+  }
+}
+
+/* =========================
+   10. CURSED NONSENSE
+   ========================= */
+
+.forbidden-archive {
+  width: fit-content; /* nur so breit wie der Inhalt */
+
+  margin-left: auto; /* zusammen mit rechts = mittig */
+  margin-right: auto; /* zusammen mit links = mittig */
+
+  text-align: center; /* Inhalt mittig */
+  margin-top: 10px; /* etwas Abstand zur Navigation */
+
+  border: 1px solid var(--arcane-gold); /* dünner goldener Rand */
+  border-radius: 999px; /* schön pillenförmig */
+  padding: 8px 14px; /* Luft innen */
+
+  transition: 0.7s ease;
+  /* Rahmen darf dramatisch weich verschwinden */
+}
+
+.forbidden-archive:has(.cursed-link:hover) {
+  border-color: transparent;
+  /* wenn der cursed-link gehovert wird: BYE RAHMEN */
+}
+
+.cursed-link {
+  position: relative;
+  /* Bezugspunkt für den später beschworenen Wächter */
+
+  display: inline-block;
+  /* macht Transform und Positionierung sauberer */
+
+  color: var(--arcane-gold); /* sieht erstmal harmlos aus */
+
+  cursor:
+    url("images/cursor-red-48.png") 0 0,
+    not-allowed; /* ROTER KRISTALL = nope, böse, gefährlich */
+
+  transition: 0.3s ease; /* Verwandlung weich machen */
+}
+
+.cursed-link::after {
+  content: "🧙‍♂️ THOU SHALT NOT PASS";
+  /* Gandalf wird von CSS beschworen */
+
+  position: absolute; /* frei über dem ursprünglichen Text */
+  left: 50%; /* horizontal zur Mitte */
+  top: 50%; /* vertikal zur Mitte */
+
+  transform: translate(-50%, -50%) scale(0);
+  /* genau zentrieren + erstmal auf Größe 0 verstecken */
+
+  color: var(--arcane-gold); /* dramatisches Gold */
+
+  white-space: nowrap;
+  /* THOU SHALT NOT PASS bleibt in EINER Zeile */
+
+  text-shadow:
+    0 0 8px var(--arcane-purple) /* violetter Schein */,
+    0 0 18px var(--arcane-gold); /* stärkerer goldener Glow */
+
+  transition: 0.3s ease;
+  /* Gandalf materialisiert sich weich statt BONK */
+}
+
+.cursed-link:hover {
+  color: transparent;
+  /* ursprünglicher Text verschwindet */
+}
+
+.cursed-link:hover::after {
+  transform: translate(-50%, -50%) scale(1.2);
+  /* Gandalf erscheint und wird extra dramatisch */
+}
+
+.office-dragon {
+  /* crimes */
+}
+
+@media screen and (max-width: 400px) {
+  nav {
+    flex-wrap: wrap; /* auf kleinen Screens dürfen die Nav-Buttons in eine neue Zeile springen */
+  }
+  fieldset {
+    grid-template-columns: 1fr; /* auf kleinen Screens alles untereinander */
+  }
+  button {
+    grid-column: 1; /* Button ebenfalls in die einzige Spalte */
+  }
+}
+
+/* 
+px       → feste Größe
+%        → relativ zum Bezugselement
+vw / vh  → relativ zum Browserfenster
+rem / em → relativ zur Schriftgröße
+fr       → Anteil am freien Platz im Grid
+auto     → Browser, regel das bitte :D
+*/
