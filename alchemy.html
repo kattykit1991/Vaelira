@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vaelira Nightthorn | Alchemy Lab</title>
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="alchemy.html">Alchemy Lab</a>
+    </nav>
+
+    <div class="forbidden-archive">
+      <span class="cursed-link">Forbidden Archive</span>
+    </div>
+
+    <header>
+      <h1>🧪 Alchemy Lab 🧪</h1>
+      <p>Dozens of undefined potions stored here...or something like that?</p>
+    </header>
+
+    <main>
+      <div class="arcane-frame">
+        <img
+          src="images/alchemy_lab.png"
+          alt="Alchemy desk stacked with potions, herbs and an open book which shows magical runes and notes."
+          width="25%"
+        />
+      </div>
+
+      <section>
+        <h2>Brew your Potions</h2>
+        <p>
+          Love potions, invisibility potions, or even simple healing potions -
+          you can brew them all here.
+        </p>
+        <p>Choose the potion you want to brew.</p>
+      </section>
+
+      <section>
+        <h2>Brew a Potion</h2>
+
+        <form>
+          <fieldset>
+            <legend>Potions</legend>
+
+            <label for="potionInput">Potion:</label>
+            <input
+              required
+              type="text"
+              id="potionInput"
+              name="potionInput"
+              placeholder="Enter a potion name"
+            />
+
+            <button type="submit">Brew Potion</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <section>
+        <h2>Potion Archive</h2>
+
+        <ul id="potionList"></ul>
+
+        <button id="reload" type="button">Reload Archive</button>
+      </section>
+    </main>
+
+    <footer>
+      Burns, abrasions, or explosive injuries are not the laboratory owner's
+      responsibility. <br />
+      Built with HTML, CSS, and questionable workplace safety standards. <br />
+      © 2026 Vaelira Nightthorn · Demon-related delays are non-refundable
+    </footer>
+  </body>
+</html>
