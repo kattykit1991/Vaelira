@@ -49,7 +49,7 @@ form.addEventListener("submit", function (event) {
   // console.log(potions);
 });
 
-// create list unter potion list element male ul draus und paste all potions in there thanks.
+// create list unter potion list element make ul draus und paste all potions in there thanks.
 // and when i say delete then delete, double thanks.JSON
 
 // 📜 Erstellt aus einer Potion einen sichtbaren Listeneintrag
