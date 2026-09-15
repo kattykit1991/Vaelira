@@ -88,9 +88,12 @@ function createListItem(potion) {
 }
 
 // 📚 Alle bereits gespeicherten Potions beim Laden der Seite anzeigen
-potions.forEach(function (potion) {
-  createListItem(potion);
-});
+potions
+  .slice()
+  .reverse()
+  .forEach(function (potion) {
+    createListItem(potion);
+  });
 
 // 🔄 Potion Archive / Seite neu laden
 reloadButton.addEventListener("click", function () {
