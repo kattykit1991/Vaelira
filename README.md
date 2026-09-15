@@ -31,13 +31,16 @@ The website currently contains several pages, including:
 - About
 - Services
 - Contact
+- Alchemy Lab
 
 ## Technologies
 
 - HTML5
 - CSS3
+- JavaScript
 
-No JavaScript or frameworks are currently used.
+The Alchemy Lab uses vanilla JavaScript and `localStorage` to save potions in
+the browser.
 
 ## Image Notice
 

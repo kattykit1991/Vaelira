@@ -280,6 +280,48 @@ button:hover {
 }
 
 /* =========================
+   7.1 POTION ARCHIVE
+   ========================= */
+
+#potionList {
+  padding: 0; /* Standard-Einrückung der Liste entfernen */
+  list-style: none; /* normale Listenpunkte verschwinden */
+}
+
+#potionList li {
+  display: flex; /* Potion-Name und Delete-Button nebeneinander */
+  justify-content: space-between; /* Name links, Button rechts */
+  align-items: center; /* beide schön auf gleicher Höhe */
+
+  margin: 10px 0; /* bisschen Luft zwischen den Potions */
+  padding: 10px 14px; /* Luft innerhalb eines Eintrags */
+
+  background-color: var(--arcane-dark); /* dunkler Vaelira-Hintergrund */
+
+  border: 1px solid var(--arcane-purple); /* violetter Rahmen */
+  border-radius: 10px; /* passend zum restlichen Design */
+}
+
+#potionList button {
+  grid-column: auto; /* allgemeines Formular-Grid hier wieder aufheben */
+
+  margin-left: 15px; /* Abstand zwischen Potion und Delete */
+
+  color: #ff8a8a; /* dämonisch freundliches Rot */
+  border-color: #a83f4b; /* dunkler roter Rand */
+}
+
+#potionList button:hover {
+  background-color: #a83f4b; /* beim Hover wird der Button rot */
+  color: var(--arcane-light); /* helle Schrift */
+
+  box-shadow:
+    0 0 0 3px var(--arcane-purple),
+    0 0 18px rgba(168, 63, 75, 0.45);
+  /* violetter Ring + roter Glow = potion murder mode */
+}
+
+/* =========================
    8. FOOTER
    ========================= */
 
